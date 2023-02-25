@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e" pages="2">
     <diagram id="C5RBs43oDa-KdzZeNtuy" name="What is it">
-        <mxGraphModel dx="2600" dy="935" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
+        <mxGraphModel dx="308" dy="241" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
             <root>
                 <mxCell id="WIyWlLk6GJQsqaUBKTNV-0"/>
                 <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0"/>
@@ -101,7 +101,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="vVWoFjoc36j2dcc5wbtc" name="What does it do">
-        <mxGraphModel dx="2600" dy="1335" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
+        <mxGraphModel dx="308" dy="641" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -296,18 +296,18 @@
                 <mxCell id="gCNG7wdExlEgFWwGygNY-4" value="Delay" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#393C56;fillColor=#F2CC8F;strokeColor=#E07A5F;" parent="1" vertex="1">
                     <mxGeometry x="1085" y="643" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="tw-JjLDrIcfadiDn6p8j-1" value="&lt;span style=&quot;color: rgb(238, 238, 238); font-family: Helvetica; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Alerts&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
+                <mxCell id="tw-JjLDrIcfadiDn6p8j-1" value="&lt;span style=&quot;color: rgb(238, 238, 238); font-family: Helvetica; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Alerts&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=20;fontFamily=Architects Daughter;" parent="1" vertex="1">
                     <mxGeometry x="1694" y="-121.5" width="69" height="46" as="geometry"/>
                 </mxCell>
-                <mxCell id="tw-JjLDrIcfadiDn6p8j-4" style="edgeStyle=none;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;" edge="1" parent="1" source="tw-JjLDrIcfadiDn6p8j-2" target="tw-JjLDrIcfadiDn6p8j-3">
+                <mxCell id="tw-JjLDrIcfadiDn6p8j-4" style="edgeStyle=none;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;" parent="1" source="tw-JjLDrIcfadiDn6p8j-2" target="tw-JjLDrIcfadiDn6p8j-3" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="1723" y="62" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="tw-JjLDrIcfadiDn6p8j-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;fontColor=#393C56;rounded=1;fillColor=#F2CC8F;strokeColor=#E07A5F;" vertex="1" parent="1">
+                <mxCell id="tw-JjLDrIcfadiDn6p8j-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;fontColor=#393C56;rounded=1;fillColor=#F2CC8F;strokeColor=#E07A5F;" parent="1" vertex="1">
                     <mxGeometry x="1683" y="-57" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="tw-JjLDrIcfadiDn6p8j-3" value="Get water tempreture" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#393C56;fillColor=#F2CC8F;strokeColor=#E07A5F;" vertex="1" parent="1">
+                <mxCell id="tw-JjLDrIcfadiDn6p8j-3" value="Get water tempreture" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#393C56;fillColor=#F2CC8F;strokeColor=#E07A5F;" parent="1" vertex="1">
                     <mxGeometry x="1663" y="69" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
