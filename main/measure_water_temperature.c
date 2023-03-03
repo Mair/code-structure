@@ -8,8 +8,10 @@
 #define TAG "MEASURE WATER TEMPERATURE"
 #define DS18B20_GPIO_PIN 4
 
+static volatile float temperature;
+
 static void measure_water_temperature(void *params);
-static void get_DS18B20_reading(float *temperature);
+static void get_DS18B20_reading(void);
 
 void measure_water_temperature_init()
 {
@@ -20,16 +22,15 @@ static void measure_water_temperature(void *params)
 {
     while (true)
     {
-        float temperature = 0;
-        get_DS18B20_reading(&temperature);
-        ESP_LOGI(TAG, "Water temperature: %f", temperature);
+        get_DS18B20_reading();
+        ESP_LOGI(TAG, "Water temperature: %f", get_water_temperature());
 
         // delay should go into the config
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
 
-static void get_DS18B20_reading(float *temperature)
+static void get_DS18B20_reading(void)
 {
     ds18x20_addr_t addrs[1];
     size_t sensor_count = 0;
@@ -39,5 +40,10 @@ static void get_DS18B20_reading(float *temperature)
         ESP_LOGE(TAG, "Failed to read sensor %s", esp_err_to_name(err));
         return;
     }
-    ds18x20_measure_and_read(DS18B20_GPIO_PIN, addrs[0], temperature);
+    ds18x20_measure_and_read(DS18B20_GPIO_PIN, addrs[0], (float *)&temperature);
+}
+
+float get_water_temperature(void)
+{
+    return temperature;
 }
