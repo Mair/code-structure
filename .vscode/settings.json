@@ -17,6 +17,13 @@
     "regex": "c",
     "tuple": "c",
     "type_traits": "c",
-    "utility": "c"
-  }
+    "utility": "c",
+    "gpio_ll.h": "c",
+    "io_mux_reg.h": "c",
+    "ets_sys.h": "c",
+    "stdio.h": "c"
+  },
+  "cSpell.words": [
+    "LOGI"
+  ]
 }
