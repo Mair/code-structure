@@ -21,7 +21,8 @@
     "gpio_ll.h": "c",
     "io_mux_reg.h": "c",
     "ets_sys.h": "c",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "measure_water_temperature.h": "c"
   },
   "cSpell.words": [
     "LOGI"

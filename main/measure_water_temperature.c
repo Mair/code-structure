@@ -4,6 +4,7 @@
 #include <ds18x20.h>
 #include <esp_log.h>
 #include "measure_water_temperature.h"
+#include "app_config.h"
 
 #define TAG "MEASURE WATER TEMPERATURE"
 #define DS18B20_GPIO_PIN 4
@@ -26,7 +27,7 @@ static void measure_water_temperature(void *params)
         ESP_LOGI(TAG, "Water temperature: %f", get_water_temperature());
 
         // delay should go into the config
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        vTaskDelay(pdMS_TO_TICKS(app_config->water_measure.temperature_intervale));
     }
 }
 
