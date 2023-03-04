@@ -3,6 +3,7 @@ idf_component_register(
         "main.c"
         "measure_water_temperature.c"
         "app_config.c"
+        "measure_ar_temperature.c"
     INCLUDE_DIRS 
         "."
     )
