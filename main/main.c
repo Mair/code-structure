@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "nvs_flash.h"
 #include "app_config.h"
-#include "measure_water_temperature.h"
-#include "measure_air_temperature.h"
+#include "water_temperature.h"
+#include "air_temperature.h"
 
 void app_main(void)
 {

@@ -1,9 +1,12 @@
 idf_component_register(
     SRCS
         "main.c"
-        "measure_water_temperature.c"
         "app_config.c"
-        "measure_ar_temperature.c"
+        "measure/air/air_temperature.c"
+        "measure/water/water_temperature.c"
     INCLUDE_DIRS 
         "."
+        "measure"
+        "measure/air"
+        "measure/water"
     )

@@ -3,7 +3,7 @@
 #include "freertos/task.h"
 #include <ds18x20.h>
 #include <esp_log.h>
-#include "measure_air_temperature.h"
+#include "air_temperature.h"
 #include "app_config.h"
 
 #define TAG "MEASURE AIR TEMPERATURE"
