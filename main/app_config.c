@@ -24,13 +24,12 @@ void app_config_init()
         ESP_LOGW(TAG, "Initializing config into NVS");
         nvs_close(handle);
         app_config_t new_app_config = {
-            .water_measure = {
-                .temperature_intervale = 30 * MINUTE}};
+            .measure = {
+                .temperature_intervale = 5 * MINUTE}};
         update_config(&new_app_config);
         return;
     }
 
-    ESP_LOGI(TAG, "app config loaded temperature_intervale = %d", app_config->water_measure.temperature_intervale);
     nvs_close(handle);
 }
 
@@ -43,5 +42,4 @@ void update_config(app_config_t *new_config_app)
     nvs_close(handle);
 
     memcpy(app_config, new_config_app, sizeof(app_config_t));
-    ESP_LOGI(TAG, "app config updated  temperature_intervale = %d", app_config->water_measure.temperature_intervale);
 }

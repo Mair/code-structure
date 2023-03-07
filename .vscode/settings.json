@@ -23,7 +23,9 @@
     "ets_sys.h": "c",
     "stdio.h": "c",
     "measure_water_temperature.h": "c",
-    "ds18x20.h": "c"
+    "ds18x20.h": "c",
+    "temperature.h": "c",
+    "read_ds18b20.h": "c"
   },
   "cSpell.words": [
     "LOGI"

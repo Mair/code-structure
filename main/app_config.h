@@ -3,13 +3,13 @@
 
 #include <stdint.h>
 
-typedef struct water_measure_t
+typedef struct measure_t
 {
     int temperature_intervale;
-} water_measure_t;
+} measure_t;
 typedef struct app_config_t
 {
-    water_measure_t water_measure;
+    measure_t measure;
 } app_config_t;
 
 extern app_config_t *app_config;
