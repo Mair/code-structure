@@ -1,0 +1,21 @@
+---
+components:
+  - name: max7219
+    description: Driver for 8-Digit LED display drivers, MAX7219/MAX7221
+    group: led
+    groups: []
+    code_owners: UncleRus
+    depends:
+      - driver
+      - log
+    thread_safe: yes
+    targets:
+      - name: esp32
+      - name: esp32s2
+      - name: esp32c3
+    licenses:
+      - name: BSD-3
+    copyrights:
+      - author:
+          name: UncleRus
+        year: 2019
