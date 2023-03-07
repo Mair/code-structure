@@ -6,6 +6,7 @@
 typedef struct measure_t
 {
     int temperature_intervale;
+    int water_level_intervale;
 } measure_t;
 typedef struct app_config_t
 {

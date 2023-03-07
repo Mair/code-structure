@@ -4,7 +4,9 @@ idf_component_register(
         "app_config.c"
         "temperature/temperature.c"
         "temperature/read_DS18B20.c"
+        "water_level/water_level.c"
     INCLUDE_DIRS 
         "."
         "temperature"
+        "water_level"
     )

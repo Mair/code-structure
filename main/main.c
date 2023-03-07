@@ -2,6 +2,7 @@
 #include "nvs_flash.h"
 #include "app_config.h"
 #include "temperature.h"
+#include "water_level.h"
 
 void app_main(void)
 {
@@ -9,4 +10,5 @@ void app_main(void)
     app_config_init();
 
     measure_temperature_init();
+    init_water_level();
 }

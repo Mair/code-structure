@@ -25,7 +25,12 @@
     "measure_water_temperature.h": "c",
     "ds18x20.h": "c",
     "temperature.h": "c",
-    "read_ds18b20.h": "c"
+    "read_ds18b20.h": "c",
+    "chrono": "c",
+    "random": "c",
+    "limits": "c",
+    "semaphore": "c",
+    "water_level.h": "c"
   },
   "cSpell.words": [
     "LOGI"
