@@ -1,10 +1,16 @@
 idf_component_register(
     SRCS
-        "main.c"
-        "app_config.c"
-        "temperature/temperature.c"
-        "temperature/read_DS18B20.c"
-    INCLUDE_DIRS 
-        "."
-        "temperature"
-    )
+    "main.c"
+    "app_config.c"
+    "temperature/temperature.c"
+    "temperature/read_DS18B20.c"
+    "temperature/water_control/heater/heater.c"
+    "temperature/water_control/cooler/cooler.c"
+    "temperature/water_control/water_control.c"
+    INCLUDE_DIRS
+    "."
+    "temperature"
+    "temperature/water_control"
+    "temperature/water_control/heater"
+    "temperature/water_control/cooler"
+)

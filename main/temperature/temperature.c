@@ -31,7 +31,7 @@ static void measure_temperature(void *params)
         air_temperature = read_DS18B20(AIR_DS18B20_GPIO_PIN);
         ESP_LOGI(TAG, "Air temperature: %f", get_air_temperature());
 
-        vTaskDelay(pdMS_TO_TICKS(app_config->measure.temperature_intervale));
+        vTaskDelay(pdMS_TO_TICKS(app_config->temperature.intervale));
     }
 }
 

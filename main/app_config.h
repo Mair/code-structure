@@ -3,13 +3,19 @@
 
 #include <stdint.h>
 
-typedef struct measure_t
+typedef struct temperature_t
 {
-    int temperature_intervale;
-} measure_t;
+    int intervale;
+    float threshold_heater_on;
+    float threshold_heater_off;
+    float threshold_cooler_on;
+    float threshold_cooler_off;
+    float threshold_alert_to_hot;
+    float threshold_alert_to_cold;
+} temperature_t;
 typedef struct app_config_t
 {
-    measure_t measure;
+    temperature_t temperature;
 } app_config_t;
 
 extern app_config_t *app_config;

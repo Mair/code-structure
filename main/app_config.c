@@ -24,8 +24,14 @@ void app_config_init()
         ESP_LOGW(TAG, "Initializing config into NVS");
         nvs_close(handle);
         app_config_t new_app_config = {
-            .measure = {
-                .temperature_intervale = 5 * MINUTE}};
+            .temperature = {
+                .intervale = 5 * MINUTE,
+                .threshold_heater_on = 5.0,
+                .threshold_heater_off = 6.0,
+                .threshold_cooler_on = 28.0,
+                .threshold_cooler_off = 26.0,
+                .threshold_alert_to_cold = 3.0,
+                .threshold_alert_to_hot = 30.0}};
         update_config(&new_app_config);
         return;
     }
