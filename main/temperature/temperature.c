@@ -18,7 +18,7 @@ static void measure_temperature(void *params);
 
 void measure_temperature_init()
 {
-    xTaskCreate(measure_temperature, "measure_temperature", 1024 * 4, NULL, 5, NULL);
+    xTaskCreate(measure_temperature, "measure_temperature", 1024 * 4, NULL, 15, NULL);
 }
 
 static void measure_temperature(void *params)

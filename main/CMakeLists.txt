@@ -7,10 +7,13 @@ idf_component_register(
     "temperature/water_control/heater/heater.c"
     "temperature/water_control/cooler/cooler.c"
     "temperature/water_control/water_control.c"
+    "governor/governor.c"
+    "governor/alerts.c"
     INCLUDE_DIRS
     "."
     "temperature"
     "temperature/water_control"
     "temperature/water_control/heater"
     "temperature/water_control/cooler"
+    "governor"
 )

@@ -15,7 +15,7 @@ static void app_config_default(void)
 {
     app_config_t new_app_config = {
         .temperature = {
-            .intervale = 5 * MINUTE,
+            .intervale = 1 * MINUTE,
             .thresholds = {
                 .heater_on = 5.0,
                 .heater_off = 6.0,

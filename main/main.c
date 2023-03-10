@@ -5,6 +5,8 @@
 #include "app_config.h"
 #include "temperature.h"
 #include "water_control.h"
+#include "governor.h"
+#include "alerts.h"
 
 void app_main(void)
 {
@@ -13,12 +15,6 @@ void app_main(void)
     water_control_init();
 
     measure_temperature_init();
-
-    /// @test - to remove////////
-    heater_on();
-    cooler_on();
-    vTaskDelay(pdMS_TO_TICKS(2000));
-    heater_off();
-    cooler_off();
-    ///////
+    alert_init();
+    governor_init();
 }

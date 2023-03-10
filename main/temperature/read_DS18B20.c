@@ -6,7 +6,7 @@
 float read_DS18B20(gpio_num_t pin)
 {
     ds18x20_addr_t addrs[1];
-    size_t sensor_count = 0;
+    size_t sensor_count = 1;
     esp_err_t err = ds18x20_scan_devices(pin, addrs, 1, &sensor_count);
     if (err)
     {
