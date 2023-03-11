@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "temperature.h"
@@ -33,23 +34,22 @@ static void governor_task(void *params)
             heater_off();
 
         ///////////////// Alerts //////////////
-        // check for alerts after testing it here
+        alert_payload_t alert_payload;
+        memset(&alert_payload, 0, sizeof(alert_payload_t));
+        alert_payload.air_temperature = get_air_temperature();
+        alert_payload.water_temperature = get_water_temperature();
 
-        ///////////////////////////////
-        ///@test on off controls////
-        heater_on();
-        cooler_on();
-        vTaskDelay(pdMS_TO_TICKS(2000));
-        heater_off();
-        cooler_off();
-        ///////
-        ///@test sending alerts////
-        alert_payload_t alert_payload = {
-            .alert_type = WATER_TEMPERATURE_TOO_HOT,
-            .air_temperature = get_air_temperature(),
-            .water_temperature = get_water_temperature()};
-        send_alert(&alert_payload);
-        ////
+        if (water_temperature >= thresholds.alert_to_hot)
+        {
+            alert_payload.alert_type = WATER_TEMPERATURE_TOO_HOT;
+            send_alert(&alert_payload);
+        }
+
+        if (water_temperature <= thresholds.alert_to_cold)
+        {
+            alert_payload.alert_type = WATER_TEMPERATURE_TOO_COLD;
+            send_alert(&alert_payload);
+        }
 
         vTaskDelay(pdMS_TO_TICKS(app_config->governor.idol_time));
     }
