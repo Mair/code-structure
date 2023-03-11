@@ -3,10 +3,21 @@
 
 #include <stdint.h>
 
+typedef struct wifi_t
+{
+    char ssid[30];
+    char pass[30];
+} wifi_t;
 typedef struct governor_t
 {
     int idol_time;
 } governor_t;
+
+typedef struct alert_t
+{
+    char slack_channel[20];
+    char authToken[70];
+} alert_t;
 
 typedef struct thresholds_t
 {
@@ -24,8 +35,10 @@ typedef struct temperature_t
 } temperature_t;
 typedef struct app_config_t
 {
+    wifi_t wifi;
     governor_t governor;
     temperature_t temperature;
+    alert_t alert;
 } app_config_t;
 
 extern app_config_t *app_config;

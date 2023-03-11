@@ -27,9 +27,11 @@
     "temperature.h": "c",
     "read_ds18b20.h": "c",
     "water_control.h": "c",
-    "stdbool.h": "c"
+    "stdbool.h": "c",
+    "connect.h": "c"
   },
   "cSpell.words": [
-    "LOGI"
+    "LOGI",
+    "ssid"
   ]
 }

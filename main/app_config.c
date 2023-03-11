@@ -23,7 +23,9 @@ static void app_config_default(void)
                 .cooler_off = 26.0,
                 .alert_to_cold = 3.0,
                 .alert_to_hot = 30.0}},
-        .governor = {.idol_time = 1 * MINUTE}};
+        .governor = {.idol_time = 1 * MINUTE},
+        .wifi = {.ssid = "POCO", .pass = "password"},
+        .alert = {.slack_channel = "C04TDG22U93", .authToken = "Bearer xoxb-4927883715462-4919962962039-D07fSvFDssi8iu9oFHRm2Z5X"}};
     update_config(&new_app_config);
 }
 
