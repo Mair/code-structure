@@ -22,6 +22,6 @@ typedef struct alert_payload_t
 } alert_payload_t;
 
 void alert_init(void);
-extern QueueHandle_t alert_queue;
+void send_alert(alert_payload_t *alert_payload);
 
 #endif

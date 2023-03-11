@@ -48,7 +48,7 @@ static void governor_task(void *params)
             .alert_type = WATER_TEMPERATURE_TOO_HOT,
             .air_temperature = get_air_temperature(),
             .water_temperature = get_water_temperature()};
-        xQueueSend(alert_queue, &alert_payload, pdMS_TO_TICKS(200));
+        send_alert(&alert_payload);
         ////
 
         vTaskDelay(pdMS_TO_TICKS(app_config->governor.idol_time));

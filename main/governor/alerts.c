@@ -16,12 +16,17 @@ static void alert_task(void *params);
 static void get_alert_str(char *alert_type_str, alert_type_t alert_type);
 static esp_err_t on_http_client_data(esp_http_client_event_t *evt);
 
-QueueHandle_t alert_queue;
+static QueueHandle_t alert_queue;
 
 void alert_init(void)
 {
     alert_queue = xQueueCreate(10, sizeof(alert_payload_t));
     xTaskCreate(alert_task, "alert_task", 1024 * 4, NULL, 10, NULL);
+}
+
+void send_alert(alert_payload_t *alert_payload)
+{
+    xQueueSend(alert_queue, alert_payload, pdMS_TO_TICKS(200));
 }
 
 static void alert_task(void *params)
