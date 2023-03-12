@@ -6,6 +6,8 @@
 #include "water_control.h"
 #include "app_config.h"
 #include "alerts.h"
+#include "sd_card.h"
+#include "chip_time.h"
 
 #define TAG "governor"
 
@@ -22,6 +24,7 @@ static void governor_task(void *params)
     {
         float water_temperature = get_water_temperature();
 
+        //////////////////// Control /////////////////////
         thresholds_t thresholds = app_config->temperature.thresholds;
         if (water_temperature >= thresholds.cooler_on)
             cooler_on();
@@ -49,6 +52,17 @@ static void governor_task(void *params)
         {
             alert_payload.alert_type = WATER_TEMPERATURE_TOO_COLD;
             send_alert(&alert_payload);
+        }
+
+        //////////////// Logs ////////////////////////
+        if (wait_for_time_to_be_set(5000) == ESP_OK)
+        {
+            printf("adding log\n");
+            log_payload_t log_payload = {
+                .air_temperature = get_air_temperature(),
+                .water_temperature = get_water_temperature(),
+                .water_level = 10000};
+            log_to_card(&log_payload);
         }
 
         vTaskDelay(pdMS_TO_TICKS(app_config->governor.idol_time));

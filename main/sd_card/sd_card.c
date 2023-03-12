@@ -1,17 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
-#include "esp_debug_helpers.h"
 #include <sys/stat.h>
+#include <ctype.h>
+#include <unistd.h>
+#include "esp_debug_helpers.h"
 #include "esp_vfs.h"
 #include "esp_vfs_fat.h"
 #include "sdmmc_cmd.h"
-#include <ctype.h>
-#include <unistd.h>
 #include "esp_log.h"
+#include "sd_card.h"
+#include "chip_time.h"
 
 #define TAG "SD_CARD"
 #define BASE_PATH "/sd"
+#define LOG_PATH "/sd/log.csv"
 
 #define PIN_NUM_MISO 13
 #define PIN_NUM_MOSI 14
@@ -67,4 +70,19 @@ void sd_card_init(void)
 
     // Card has been initialized, print its properties
     sdmmc_card_print_info(stdout, card);
+}
+
+void log_to_card(log_payload_t *log_payload)
+{
+    FILE *file = fopen(LOG_PATH, "a");
+    if (!file)
+    {
+        ESP_LOGE(TAG, "failed to open file %s %s (%d) %s", LOG_PATH, __FILE__, __LINE__, __FUNCTION__);
+        return;
+    }
+
+    char write_buffer[200];
+    sprintf(write_buffer, "%s,%f,%f,%f\n", get_time_str(), log_payload->air_temperature, log_payload->water_temperature, log_payload->water_level);
+    fwrite(write_buffer, strlen(write_buffer), 1, file);
+    fclose(file);
 }

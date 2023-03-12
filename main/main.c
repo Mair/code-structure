@@ -9,7 +9,7 @@
 #include "alerts.h"
 #include "wifi.h"
 #include "sd_card.h"
-#include "set_chip_time.h"
+#include "chip_time.h"
 
 void app_main(void)
 {

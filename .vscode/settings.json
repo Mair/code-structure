@@ -29,7 +29,8 @@
     "water_control.h": "c",
     "stdbool.h": "c",
     "connect.h": "c",
-    "esp_log.h": "c"
+    "esp_log.h": "c",
+    "sd_card.h": "c"
   },
   "cSpell.words": [
     "LOGI",
