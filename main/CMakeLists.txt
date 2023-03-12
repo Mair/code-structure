@@ -10,6 +10,8 @@ idf_component_register(
     "governor/governor.c"
     "governor/alerts.c"
     "wifi/wifi.c"
+    "wifi/set_chip_time.c"
+    "sd_card/sd_card.c"
     INCLUDE_DIRS
     "."
     "temperature"
@@ -18,4 +20,5 @@ idf_component_register(
     "temperature/water_control/cooler"
     "governor"
     "wifi"
+    "sd_card"
 )

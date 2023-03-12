@@ -28,7 +28,8 @@
     "read_ds18b20.h": "c",
     "water_control.h": "c",
     "stdbool.h": "c",
-    "connect.h": "c"
+    "connect.h": "c",
+    "esp_log.h": "c"
   },
   "cSpell.words": [
     "LOGI",

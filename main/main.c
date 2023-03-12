@@ -8,6 +8,8 @@
 #include "governor.h"
 #include "alerts.h"
 #include "wifi.h"
+#include "sd_card.h"
+#include "set_chip_time.h"
 
 void app_main(void)
 {
@@ -17,6 +19,9 @@ void app_main(void)
     water_control_init();
 
     wifi_connect_init();
+    set_chip_time();
+
+    sd_card_init();
 
     alert_init();
     governor_init();
