@@ -5,7 +5,7 @@
 
 #define TAG "NTP_TIME"
 
-void on_got_time(struct timeval *tv);
+static void on_got_time(struct timeval *tv);
 
 void print_time(long time, const char *message)
 {
@@ -26,7 +26,7 @@ void set_chip_time(void)
     sntp_set_time_sync_notification_cb(on_got_time);
 }
 
-void on_got_time(struct timeval *tv)
+static void on_got_time(struct timeval *tv)
 {
     setenv("TZ", "EST-10EDT-11,M10.5.0/02:00:00,M3.5.0/03:00:00", 1);
     tzset();

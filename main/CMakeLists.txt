@@ -10,7 +10,7 @@ idf_component_register(
     "governor/governor.c"
     "governor/alerts.c"
     "wifi/wifi.c"
-    "wifi/set_chip_time.c"
+    "set_chip_time/set_chip_time.c"
     "sd_card/sd_card.c"
     INCLUDE_DIRS
     "."
@@ -21,4 +21,5 @@ idf_component_register(
     "governor"
     "wifi"
     "sd_card"
+    "set_chip_time"
 )
