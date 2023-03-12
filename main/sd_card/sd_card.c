@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
 #include <stdlib.h>
 #include <dirent.h>
 #include <sys/stat.h>
@@ -21,8 +23,12 @@
 #define PIN_NUM_CLK 26
 #define PIN_NUM_CS 27
 
+SemaphoreHandle_t file_mutex_lock;
+
 void sd_card_init(void)
 {
+    file_mutex_lock = xSemaphoreCreateMutex();
+
     esp_vfs_fat_sdmmc_mount_config_t mount_config = {
         .format_if_mount_failed = true,
         .max_files = 5,
@@ -74,10 +80,15 @@ void sd_card_init(void)
 
 void log_to_card(log_payload_t *log_payload)
 {
+    if (!xSemaphoreTake(file_mutex_lock, pdMS_TO_TICKS(1000)))
+    {
+        ESP_LOGE(TAG, "Failed to obtain mutex lock");
+    }
     FILE *file = fopen(LOG_PATH, "a");
     if (!file)
     {
         ESP_LOGE(TAG, "failed to open file %s %s (%d) %s", LOG_PATH, __FILE__, __LINE__, __FUNCTION__);
+        xSemaphoreGive(file_mutex_lock);
         return;
     }
 
@@ -85,4 +96,5 @@ void log_to_card(log_payload_t *log_payload)
     sprintf(write_buffer, "%s,%f,%f,%f\n", get_time_str(), log_payload->air_temperature, log_payload->water_temperature, log_payload->water_level);
     fwrite(write_buffer, strlen(write_buffer), 1, file);
     fclose(file);
+    xSemaphoreGive(file_mutex_lock);
 }
