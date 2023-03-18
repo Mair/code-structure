@@ -83,6 +83,7 @@ void log_to_card(log_payload_t *log_payload)
     if (!xSemaphoreTake(file_mutex_lock, pdMS_TO_TICKS(1000)))
     {
         ESP_LOGE(TAG, "Failed to obtain mutex lock");
+        return;
     }
     FILE *file = fopen(LOG_PATH, "a");
     if (!file)
