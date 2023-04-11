@@ -19,11 +19,11 @@ esp_err_t divide_2_numbers(int left, int right, float *result)
     return ESP_FAIL;
 }
 
-esp_err_t divide_2_numbers(int left, int right, float *result)
+esp_err_t divide_2_numbers(float left, float right, float *result)
 {
     if (right == 0)
         return ESP_FAIL;
-    int local_result = left / right;
+    float local_result = left / right;
     *result = local_result;
     return ESP_OK;
 }
